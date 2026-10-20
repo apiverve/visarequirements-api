@@ -1,0 +1,92 @@
+openapi: 3.0.4
+info:
+  title: Visa Requirements
+  description: >-
+    Visa Requirements tells you what a passport holder needs to enter another
+    country: no visa, an electronic travel authorization, an eVisa, a visa on
+    arrival, a visa arranged in advance, or entry restricted. It also returns
+    the allowed stay in days where one is set. Paid plans can list every
+    destination for one passport.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/visarequirements:
+    get:
+      summary: Visa Requirements
+      description: >-
+        Get the entry requirement and allowed stay for one passport traveling to
+        one destination
+      operationId: visarequirements
+      parameters:
+        - name: passport
+          in: query
+          schema:
+            type: string
+          required: true
+          description: >-
+            The passport's country: a two-letter ISO code such as US, or an
+            English name such as United States
+          example: US
+        - name: destination
+          in: query
+          schema:
+            type: string
+          required: true
+          description: >-
+            The destination country or territory: a two-letter ISO code such as
+            JP, or an English name such as Japan
+          example: JP
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  passport: US
+                  passportName: United States
+                  destination: JP
+                  destinationName: Japan
+                  requirement: visa_free
+                  requirementLabel: Visa not required
+                  visaRequiredInAdvance: false
+                  allowedStayDays: 90
+                  allowedStay: 90 days
+                  updatedAt: '2026-10-22T09:00:00.000Z'
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
