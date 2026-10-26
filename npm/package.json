@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/visarequirements",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Visa Requirements tells you what a passport holder needs to enter another country: no visa, an electronic travel authorization, an eVisa, a visa on arrival, a visa arranged in advance, or entry restricted. It also returns the allowed stay in days where one is set. Paid plans can list every destination for one passport.",
   "main": "index.js",
   "types": "index.d.ts",
