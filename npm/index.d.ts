@@ -34,6 +34,8 @@ declare module '@apiverve/visarequirements' {
       visaRequiredInAdvance: boolean | null;
       allowedStayDays:       number | null;
       allowedStay:           null | string;
+      options:               (null | string)[];
+      onlineApplication:     null;
       updatedAt:             Date | null;
   }
 
