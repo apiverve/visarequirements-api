@@ -59,6 +59,12 @@ namespace APIVerve.API.VisaRequirements
         [JsonProperty("allowedStay")]
         public string AllowedStay { get; set; }
 
+        [JsonProperty("options")]
+        public string[] Options { get; set; }
+
+        [JsonProperty("onlineApplication")]
+        public object OnlineApplication { get; set; }
+
         [JsonProperty("updatedAt")]
         public DateTimeOffset? UpdatedAt { get; set; }
     }

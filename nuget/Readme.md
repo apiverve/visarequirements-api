@@ -1,7 +1,7 @@
 Visa Requirements API
 ============
 
-Visa Requirements tells you what a passport holder needs to enter another country: no visa, an electronic travel authorization, an eVisa, a visa on arrival, a visa arranged in advance, or entry restricted. It also returns the allowed stay in days where one is set. Paid plans can list every destination for one passport.
+Visa Requirements tells you what a passport holder needs to enter another country: no visa, an electronic travel authorization, an eVisa, a visa on arrival, a visa arranged in advance, or entry restricted. Paid plans add the allowed stay in days, every alternative route (an eVisa or a visa on arrival, say), a link to the official government portal for ETAs and eVisas, per-category counts for a passport and its full destination list.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.VisaRequirements.svg)](https://www.nuget.org/packages/APIVerve.API.VisaRequirements)
@@ -384,6 +384,10 @@ using (var apiClient = new VisaRequirementsAPIClient("[YOUR_API_KEY]"))
     "visaRequiredInAdvance": false,
     "allowedStayDays": 90,
     "allowedStay": "90 days",
+    "options": [
+      "visa_free"
+    ],
+    "onlineApplication": null,
     "updatedAt": "2026-10-22T09:00:00.000Z"
   }
 }
