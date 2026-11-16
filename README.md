@@ -1,6 +1,6 @@
 # [Visa Requirements API](https://apiverve.com/marketplace/visarequirements?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Visa Requirements tells you what a passport holder needs to enter another country: no visa, an electronic travel authorization, an eVisa, a visa on arrival, a visa arranged in advance, or entry restricted. It also returns the allowed stay in days where one is set. Paid plans can list every destination for one passport.
+Visa Requirements tells you what a passport holder needs to enter another country: no visa, an electronic travel authorization, an eVisa, a visa on arrival, a visa arranged in advance, or entry restricted. Paid plans add the allowed stay in days, every alternative route (an eVisa or a visa on arrival, say), a link to the official government portal for ETAs and eVisas, per-category counts for a passport and its full destination list.
 
 The Visa Requirements API provides a simple, reliable way to integrate visa requirements functionality into your applications. Built for developers who need production-ready visa requirements capabilities without the complexity of building from scratch.
 
@@ -221,6 +221,10 @@ A real response from the Visa Requirements API:
     "visaRequiredInAdvance": false,
     "allowedStayDays": 90,
     "allowedStay": "90 days",
+    "options": [
+      "visa_free"
+    ],
+    "onlineApplication": null,
     "updatedAt": "2026-10-22T09:00:00.000Z"
   }
 }
